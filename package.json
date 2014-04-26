@@ -1,0 +1,15 @@
+{
+	"name": "sonea",
+	"version": "0.0.1",
+	"description": "Homepage Framework (looking for a better description xD) - runtime module loader - CMS?",
+	"keywords": [
+		"sonea",
+		"module loader",
+		"cms"
+	],
+	"author": "MRW Neundorf <matt@nax.me>",
+	"repository": {
+		"type": "git",
+    "url": "git://github.com/Naxmeify/sonea.git"
+	}
+}
