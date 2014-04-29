@@ -35,14 +35,13 @@ class Sonea
   bodyParser: require 'body-parser'
 
 
-
   db: null
 
   opts: #defaults options
     env: process.env.NODE_ENV or 'development'
     port: process.env.PORT or 3000
     
-    views: ''
+    views: 'views'
     viewEngine: 'jade'
 
 
@@ -58,14 +57,17 @@ class Sonea
 
   config: ->
     $ = @
-
+    
     # todo before config
-
+    @app.set 'views',  @path.join __dirname, @opts.views
+    @app.set 'view engine', @opts.viewEngine
     @app.use @favicon()
     @app.use @logger('dev') # '  sonea :method :url :status :res[Content-Length]b')
     @app.use @bodyParser.json()
     @app.use @bodyParser.urlencoded()
     @app.use @cookieParser()
+    @app.use require("stylus").middleware(@path.join(__dirname, "public"))
+    @app.use @express.static(@path.join(__dirname, "public"))
 
     # 404 Error
     @app.use (req, res, next) ->
@@ -73,15 +75,16 @@ class Sonea
       err.status = 404
       next err
 
-    # 500 Error
+    # Render Error
     @app.use (err, req, res, next) ->
       res.status err.status or 500
-      res.send err.message
+      res.render "error",
+        message: err.message
+        error: err
 
     # todo after config
 
   configLocals: (locals)->
-    
     app.use (req, res, next) ->
       res.locals = _.extend res.locals, locals
       next()
