@@ -19,7 +19,12 @@
   },
   "dependencies": {
     "coffee-script": "^1.7.1",
-    "debug": "^0.8.1"
+    "debug": "^0.8.1",
+    "mongoose-schema-extend": "^0.1.7",
+    "mongoose": "^3.8.8",
+    "bcrypt": "^0.7.8",
+    "lodash": "^2.4.1",
+    "connect-mongo": "^0.4.0"
   },
   "devDependencies": {
     "should": "~3.3.1",

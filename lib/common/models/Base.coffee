@@ -1,6 +1,4 @@
-#!/usr/bin/env node
-
-/**
+###
 The MIT License (MIT)
 
 Copyright (c) 2014 MRW Neundorf <matt@nax.me>
@@ -22,7 +20,20 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-*/
+###
 
-var pkg = require('../package');
-console.log("Still in development. Version " + pkg.version);
+mongoose = require 'mongoose'
+Schema = mongoose.Schema
+
+BaseSchema = new Schema
+  createdat:
+    type: Date
+    required: true
+    default: Date.now
+
+  updatedat:
+    type: Date
+    required: true
+    default: Date.now
+
+module.exports = mongoose.model 'Base', BaseSchema

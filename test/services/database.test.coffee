@@ -1,6 +1,4 @@
-#!/usr/bin/env node
-
-/**
+###
 The MIT License (MIT)
 
 Copyright (c) 2014 MRW Neundorf <matt@nax.me>
@@ -22,7 +20,28 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-*/
+###
 
-var pkg = require('../package');
-console.log("Still in development. Version " + pkg.version);
+should = require 'should'
+
+root = process.cwd()
+
+config = require root + '/lib/config/config'
+Database = new require(root + '/lib/common/services/Database')
+db = null
+
+describe 'Database Service Test', ->
+  after (done)->
+    db.close (err)->
+      throw err if err
+      done()
+
+  it 'should exists a database config', (done) ->
+    should.exists config.db
+    done()
+
+  it 'should be able to connect to a local mongodb', (done) ->
+    db = new Database config, (err)->
+      should.not.exists err
+      done()
+  
