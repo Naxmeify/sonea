@@ -22,6 +22,75 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ###
 debug = require('debug')('sonea')
+_ = require 'lodash'
 
+ 
 class Sonea
-	constructor: (opts)->
+  express: require 'express'
+  path: require 'path'
+  path: require 'path'
+  favicon: require 'static-favicon'
+  logger: require 'morgan'
+  cookieParser: require 'cookie-parser'
+  bodyParser: require 'body-parser'
+
+
+
+  db: null
+
+  opts: #defaults options
+    env: process.env.NODE_ENV or 'development'
+    port: process.env.PORT or 3000
+    
+    views: ''
+    viewEngine: 'jade'
+
+
+  constructor: (opts)->
+    debug 'Constructor of Sonea loaded' 
+
+    @opts = _.extend @opts, opts
+
+    @app = @express()
+
+    @config()
+
+    @start()
+
+
+  config: ->
+    $ = @
+
+    # todo before config
+
+    @app.use @favicon()
+    @app.use @logger('dev') # '  sonea :method :url :status :res[Content-Length]b')
+    @app.use @bodyParser.json()
+    @app.use @bodyParser.urlencoded()
+    @app.use @cookieParser()
+
+    # 404 Error
+    @app.use (req, res, next) ->
+      err = new Error("Not Found")
+      err.status = 404
+      next err
+
+    # 500 Error
+    @app.use (err, req, res, next) ->
+      res.status err.status or 500
+      res.send err.message
+
+    # todo after config
+
+  configLocals: (locals)->
+    
+    app.use (req, res, next) ->
+      res.locals = _.extend res.locals, locals
+      next()
+
+  start: ->
+    $ = @
+    @app.listen @opts.port, ->
+      debug 'sonea runs on port ' + $.opts.port
+
+module.exports = Sonea

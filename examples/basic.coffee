@@ -1,4 +1,4 @@
-/**
+###
 The MIT License (MIT)
 
 Copyright (c) 2014 MRW Neundorf <matt@nax.me>
@@ -20,13 +20,16 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-*/
+###
 
-require('coffee-script/register');
-var debug = require('debug')('sonea');
+# clear console before
+lines = process.stdout.getWindowSize()[1]
+for i in [0...lines]
+  console.log '\r\n'
+# clear console before
 
-var pkg = require('./package')
-debug('sonea Version ' + pkg.version + ' loaded');
 
-module.exports = require('./lib/main');
-
+debug = require('debug')('sonea-basic-example')
+Sonea = require '../index'
+debug 'Try to create an instance of Sonea'
+app = new Sonea
