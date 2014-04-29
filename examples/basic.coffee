@@ -33,3 +33,6 @@ debug = require('debug')('sonea-basic-example')
 Sonea = require '../index'
 debug 'Try to create an instance of Sonea'
 app = new Sonea
+
+app.start ->
+  debug 'sonea runs on port ' + app.opts.port

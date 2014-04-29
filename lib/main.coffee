@@ -55,8 +55,6 @@ class Sonea
 
     @config()
 
-    @start()
-
 
   config: ->
     $ = @
@@ -88,9 +86,11 @@ class Sonea
       res.locals = _.extend res.locals, locals
       next()
 
-  start: ->
+  start: (callback)->
     $ = @
     @app.listen @opts.port, ->
       debug 'sonea runs on port ' + $.opts.port
+      if callback
+        callback $
 
 module.exports = Sonea
