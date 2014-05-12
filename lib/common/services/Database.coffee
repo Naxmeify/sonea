@@ -23,22 +23,28 @@ SOFTWARE.
 ###
 
 mongoose = require 'mongoose'
-
+debug = require('debug')('sonea')
 class Database
   connection: null
   
   constructor: (config, callback)->
+    debug 'Database Service loaded'
     @dbConfig = config.db
 
     if @connection?
+      debug 'Database Service already connected'
       callback new Error 'already connected'
     else
       @connection = mongoose.connect @dbConfig, (err)->
-        throw err if err
+        if err
+          debug 'Database Service can not connect.'
+          throw err
         callback null
 
   close: (callback)->
     @connection.disconnect (err)->
+      debug 'Database Service disconnected' unless err
+      debug 'Database Service can not disconnect' if err
       callback err
 
 module.exports = Database

@@ -28,7 +28,6 @@ _ = require 'lodash'
 class Sonea
   express: require 'express'
   path: require 'path'
-  path: require 'path'
   favicon: require 'static-favicon'
   logger: require 'morgan'
   cookieParser: require 'cookie-parser'
@@ -38,6 +37,7 @@ class Sonea
   db: null
 
   opts: #defaults options
+    cwd: process.cwd()
     env: process.env.NODE_ENV or 'development'
     port: process.env.PORT or 3000
     
@@ -48,17 +48,27 @@ class Sonea
   constructor: (opts)->
     debug 'Constructor of Sonea loaded' 
 
+    # loading default config
+    @opts = _.extend @opts, require './config/config'
+
+    # user can override opts here
     @opts = _.extend @opts, opts
 
+    # init express app
     @app = @express()
 
-    @config()
+    # loading express config
+    @expressConfig()
+
+    @expressConfigLocals()
 
 
-  config: ->
+  expressConfig: ->
+    # define a placeholder for this
     $ = @
     
-    # todo before config
+    # todo before expressConfig
+
     @app.set 'views',  @path.join __dirname, @opts.views
     @app.set 'view engine', @opts.viewEngine
     @app.use @favicon()
@@ -82,18 +92,19 @@ class Sonea
         message: err.message
         error: err
 
-    # todo after config
+    # todo after expressConfig
 
-  configLocals: (locals)->
-    app.use (req, res, next) ->
+  expressConfigLocals: (locals)->
+    @app.use (req, res, next) ->
       res.locals = _.extend res.locals, locals
       next()
 
   start: (callback)->
+    # define a placeholder for this
     $ = @
+
     @app.listen @opts.port, ->
       debug 'sonea runs on port ' + $.opts.port
-      if callback
-        callback $
+      callback $ if callback
 
 module.exports = Sonea

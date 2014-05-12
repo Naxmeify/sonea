@@ -22,8 +22,34 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ###
 
+root = process.cwd()
+Sonea = require root + '/index.js'
+app = null
+
 describe "Sonea Test", ->
   describe "General Test", ->
-    it "should return -1 when the value is not present", ->
-      [1..3].indexOf(5).should.equal -1
-      [1..3].indexOf(0).should.equal -1
+    before (done) ->
+      app = new Sonea
+      done()
+
+    it 'should have sonea as site title in opts', (done) ->
+      app.opts.site.title.should.equal 'Sonea'
+      done()
+
+    it 'should have the cwd path in opts', (done) ->
+      app.opts.cwd.should.equal process.cwd()
+      done()
+
+    it 'should have port process.env.PORT or 3000 in opts', (done) ->
+      app.opts.port.should.equal process.env.PORT or 3000
+      done()
+
+    it 'should have viewEngine jade in opts', (done) ->
+      app.opts.viewEngine.should.equal 'jade'
+      done()
+
+    it 'should give me the app after start', (done) ->
+      app.start ($)->
+        app.should.equal $
+        done()
+

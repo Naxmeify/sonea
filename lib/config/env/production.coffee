@@ -22,20 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ###
 
-# clear console before
-lines = process.stdout.getWindowSize()[1]
-for i in [0...lines]
-  console.log '\r\n'
-# clear console before
-
-
-debug = require('debug')('sonea-basic-example')
-Sonea = require '../index'
-debug 'Try to create an instance of Sonea'
-app = new Sonea
-  root: __dirname
-
-app.start ->
-  debug 'sonea runs on port ' + app.opts.port
-  debug app.opts.root
-  debug app.opts.cwd
+module.exports =
+  db: 'mongodb://localhost:27017/soneaproduction'
+  session:
+    collection: 'session'
