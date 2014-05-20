@@ -42,9 +42,9 @@
   "scripts": {
     "test": "mocha",
     "start": "set DEBUG=sonea & node index.js",
-    "example": "set DEBUG=sonea,sonea-basic-example & nodemon -q examples/basic.coffee",
+    "example": "set DEBUG=sonea,sonea-basic-example & nodemon -q examples/basicExample/basic.coffee",
 
     "wintest": "set NODE_ENV=test & mocha",
-    "winexample": "set DEBUG=sonea,sonea-basic-example & nodemon -q examples/basic.coffee"
+    "winexample": "set DEBUG=sonea,sonea-basic-example & nodemon -q examples/basicExample/basic.coffee"
   }
 }

@@ -1,0 +1,11 @@
+{
+  "name": "sonea-basic-example",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "set DEBUG=sonea,sonea-basic-example & nodemon -q basic.coffee"
+  },
+  "dependencies": {
+    
+  }
+}
