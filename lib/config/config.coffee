@@ -22,7 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ###
 
+'use strict'
+
 _ = require 'lodash'
 env = process.env.NODE_ENV or 'development'
-
-module.exports = _.extend require('./env/all'), require('./env/' + env)
+module.exports = _.extend require('./env/all'), 
+  require('./env/' + env.trim()) or {}

@@ -22,7 +22,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ###
 
+'use strict'
+
 module.exports =
+  port: 3001
   db: 'mongodb://localhost:27017/soneatest'
   session:
     collection: 'session'

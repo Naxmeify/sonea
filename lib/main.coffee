@@ -21,11 +21,14 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ###
+'use strict'
+
 debug = require('debug')('sonea')
 _ = require 'lodash'
 
  
 class Sonea
+  # dependencies
   express: require 'express'
   path: require 'path'
   favicon: require 'static-favicon'
@@ -33,11 +36,16 @@ class Sonea
   cookieParser: require 'cookie-parser'
   bodyParser: require 'body-parser'
 
-
+  # database placeholder
   db: null
 
-  opts: #defaults options
+  opts: # defaults options
+
+    # paths
     cwd: process.cwd()
+    root: __dirname
+
+    # env
     env: process.env.NODE_ENV or 'development'
     port: process.env.PORT or 3000
     
@@ -50,7 +58,6 @@ class Sonea
 
     # loading default config
     @opts = _.extend @opts, require './config/config'
-
     # user can override opts here
     @opts = _.extend @opts, opts
 

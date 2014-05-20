@@ -21,9 +21,12 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ###
+'use strict'
 
 root = process.cwd()
 Sonea = require root + '/index.js'
+config = require root + '/lib/config/config'
+
 app = null
 
 describe "Sonea Test", ->
@@ -40,8 +43,8 @@ describe "Sonea Test", ->
       app.opts.cwd.should.equal process.cwd()
       done()
 
-    it 'should have port process.env.PORT or 3000 in opts', (done) ->
-      app.opts.port.should.equal process.env.PORT or 3000
+    it 'should have port process.env.PORT or config.port ('+config.port+') in opts', (done) ->
+      app.opts.port.should.equal process.env.PORT or config.port
       done()
 
     it 'should have viewEngine jade in opts', (done) ->

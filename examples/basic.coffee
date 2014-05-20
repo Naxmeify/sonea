@@ -21,12 +21,15 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ###
+'use strict'
 
 # clear console before
 lines = process.stdout.getWindowSize()[1]
 for i in [0...lines]
   console.log '\r\n'
-# clear console before
+
+# set NODE_ENV to development
+process.env.NODE_ENV = 'development'
 
 
 debug = require('debug')('sonea-basic-example')
@@ -37,5 +40,5 @@ app = new Sonea
 
 app.start ->
   debug 'sonea runs on port ' + app.opts.port
-  debug app.opts.root
-  debug app.opts.cwd
+  debug 'root path: ' + app.opts.root
+  debug 'cwd path: ' + app.opts.cwd

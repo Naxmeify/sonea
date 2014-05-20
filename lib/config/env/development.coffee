@@ -21,8 +21,10 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ###
+'use strict'
 
 module.exports =
+  port: 3000
   db: 'mongodb://localhost:27017/soneadevelopment'
   session:
     collection: 'session'
