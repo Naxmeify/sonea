@@ -39,6 +39,8 @@ debug 'Try to create an instance of sonea'
 app = new sonea
   root: __dirname
 
+app.addModule '/', require './basicModule'
+
 app.start ->
   debug 'sonea runs on port ' + app.opts.port
   debug 'root path: ' + app.opts.root

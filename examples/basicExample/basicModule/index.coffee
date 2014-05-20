@@ -23,3 +23,9 @@ SOFTWARE.
 ###
 
 'use strict'
+
+debug = require('debug')('basicModule')
+express = require 'express'
+router = express.Router()
+
+module.exports = router
