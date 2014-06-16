@@ -7,10 +7,10 @@
     "module loader",
     "cms"
   ],
-  "author": "MRW Neundorf <matt@nax.me>",
+  "author": "damn creative <info@damncreative.de>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/Naxmeify/sonea.git"
+    "url": "git://github.com/damncreative/sonea.git"
   },
   "license": "MIT",
   "main": "./index.js",
