@@ -6,4 +6,4 @@ services:
   - mongodb
 
 env:
-  - NODE_ENV=test DEBUG=sonea
+  - NODE_ENV=test DEBUG="sonea,sonea-cli,sonea-mod"

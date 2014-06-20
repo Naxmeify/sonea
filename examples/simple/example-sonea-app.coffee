@@ -1,5 +1,3 @@
-<snippet>
-  <content><![CDATA[
 ###
 The MIT License (MIT)
 
@@ -23,9 +21,31 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ###
-]]></content>
-  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-  <tabTrigger>mitcopy</tabTrigger>
-  <!-- Optional: Set a scope to limit where the snippet will trigger -->
-  <scope>source.coffee</scope>
-</snippet>
+'use strict'
+
+# clear console before
+lines = process.stdout.getWindowSize()[1]
+for i in [0...lines]
+  console.log '\r\n'
+
+# set NODE_ENV to development
+process.env.NODE_ENV = 'development'
+
+debug = require('debug')('sonea-basic-example')
+sonea = require '../index'
+
+debug 'Try to create an instance of sonea'
+app = new sonea
+  root: __dirname
+  views: 'rofl'
+
+router = app.express.Router()
+router.get '/', (req, res)->
+  res.send 'lol'
+
+app.app.use '/asd', router
+
+app.start ->
+  debug 'sonea runs on port ' + app.opts.port
+  debug 'root path: ' + app.opts.root
+  debug 'cwd path: ' + app.opts.cwd

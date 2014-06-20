@@ -1,5 +1,3 @@
-<snippet>
-  <content><![CDATA[
 ###
 The MIT License (MIT)
 
@@ -23,9 +21,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ###
-]]></content>
-  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-  <tabTrigger>mitcopy</tabTrigger>
-  <!-- Optional: Set a scope to limit where the snippet will trigger -->
-  <scope>source.coffee</scope>
-</snippet>
+'use strict'
+
+module.exports =
+  db: 'mongodb://localhost:27017/soneaproduction'
+  session:
+    collection: 'session'

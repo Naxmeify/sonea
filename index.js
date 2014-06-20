@@ -1,7 +1,7 @@
 /**
 The MIT License (MIT)
 
-Copyright (c) 2014 MRW Neundorf <matt@nax.me>
+Copyright (c) 2014 damn creative <info@damncreative.de>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -29,5 +29,5 @@ var debug = require('debug')('sonea');
 var pkg = require('./package')
 debug('sonea Version ' + pkg.version + ' loaded');
 
-module.exports = require('./lib/main');
+module.exports = require('./lib/mod/sonea.mod');
 

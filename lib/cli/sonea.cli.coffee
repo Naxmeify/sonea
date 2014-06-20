@@ -1,5 +1,3 @@
-<snippet>
-  <content><![CDATA[
 ###
 The MIT License (MIT)
 
@@ -23,9 +21,30 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ###
-]]></content>
-  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-  <tabTrigger>mitcopy</tabTrigger>
-  <!-- Optional: Set a scope to limit where the snippet will trigger -->
-  <scope>source.coffee</scope>
-</snippet>
+'use strict'
+
+# get logger
+log = require('debug')('sonea-cli')
+# get pkg
+pkg = require '../../package.json'
+# get loader
+loader = require './util/loader'
+
+# init cli
+log 'init sonea cli commander'
+cli = require 'commander'
+
+# set sonea version
+log 'set cli version ' + pkg.version
+cli.version pkg.version
+
+# load options
+log 'load cli options'
+require('./sonea.cli.options')(cli)
+# load commands
+log 'load cli commands'
+loader.loadCommands cli
+
+# parse arguments
+log 'parse process arguments'
+cli.parse process.argv

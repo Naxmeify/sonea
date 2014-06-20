@@ -1,5 +1,3 @@
-<snippet>
-  <content><![CDATA[
 ###
 The MIT License (MIT)
 
@@ -23,9 +21,38 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ###
-]]></content>
-  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-  <tabTrigger>mitcopy</tabTrigger>
-  <!-- Optional: Set a scope to limit where the snippet will trigger -->
-  <scope>source.coffee</scope>
-</snippet>
+
+fs = require 'fs'
+log = require('debug')('sonea-cli')
+
+exports.loadCommands = (cli)->
+  # Get Path
+  cmd_path = __dirname + '/../commands'
+  # Define Walker
+  walk = (path)->
+    fs.readdirSync(path).forEach (file) ->
+      newPath = path + '/' + file
+      stat = fs.statSync(newPath)
+      if stat.isFile()
+        np = newPath.split('/')
+        fp = np[np.length-1].split('.')
+        cmd = fp[0]
+        log 'command ' + cmd + ' loaded'
+        require(newPath)(cli)  if /(.*)\.(js$|coffee$)/.test(file)
+      else walk newPath  if stat.isDirectory()
+  # Run Walker
+  walk cmd_path
+
+
+exports.loadAllInDir = (models_path) ->
+  walk = (path) ->
+    fs.readdirSync(path).forEach (file) ->
+      newPath = path + '/' + file
+      stat = fs.statSync(newPath)
+      if stat.isFile()
+        np = newPath.split('/')
+        log np[np.length-1] + ' loaded'
+        require newPath  if /(.*)\.(js$|coffee$)/.test(file)
+      else walk newPath  if stat.isDirectory()
+
+  walk models_path

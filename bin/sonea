@@ -3,7 +3,7 @@
 /**
 The MIT License (MIT)
 
-Copyright (c) 2014 MRW Neundorf <matt@nax.me>
+Copyright (c) 2014 damn creative <info@damncreative.de>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,136 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
+'use strict';
 
-var pkg = require('../package');
-console.log("Still in development. Version " + pkg.version);
+require('coffee-script/register');
+
+var log = require('debug')('sonea-cli');
+
+if(process.argv[process.argv.length-1] == 'transformed') {
+  require('../lib/cli/sonea.cli');
+} else {
+  var spawn = require('child_process').spawn
+  , args = [ __dirname + '/sonea' ];
+
+  var transformArg = function(arg, index, argv){
+    var flag = arg.split('=')[0];
+    
+    var ret = '';
+    var add = false;
+
+    switch (flag) {
+
+      // ==============================
+      // GENERATE
+      case 'a':
+      case 'app':
+        ret = 'app';
+        break;
+
+      case 'm':
+      case 'module':
+        ret = 'module';
+        break;
+
+      case 'c':
+      case 'controller':
+        ret = 'controller';
+        break;
+
+      case 'v':
+      case 'view':
+        ret = 'view';
+        break;
+
+      case 'model':
+        ret = 'model';
+        break;
+
+      case 'r':
+      case 'resource':
+        ret = 'resource';
+        break;
+
+      case 'h':
+      case 'hook':
+        ret = 'hook';
+        break;
+
+      case 'migration':
+        ret = 'migration';
+        break;
+
+
+      case 'g':
+      case 'generate':
+        var t = transformArg(argv[index+1], index+1, argv);
+        ret = 'generate-' + t;
+        add = true;
+        break;
+      // ==============================
+      // ==============================
+      // INSTALL
+      case 'i':
+      case 'install':
+        ret = 'install';
+        add = true;
+        break;
+      // ==============================
+      // ==============================
+      // DEPLOY
+      case 'd':
+      case 'deploy':
+        ret = 'deploy';
+        add = true;
+        break;
+      // ==============================
+      // ==============================
+      // SERVER
+      case 's':
+      case 'server':
+        ret = 'server';
+        add = true;
+        break;
+      // ==============================
+      // ==============================
+      // TEST
+      case 't':
+      case 'test':
+        ret = 'test';
+        add = true;
+        break;
+      // ==============================
+      default:
+        ret = flag;
+        add = true;
+        break;
+    }
+    if(ret.length > 0 && add) {
+      args.push(ret);
+    }
+    return ret;
+  }
+
+  var s = process.argv.slice(2);
+  s.forEach(transformArg);
+  args.push('transformed');
+
+  var proc = spawn(process.argv[0], args, { customFds: [0,1,2] });
+  proc.on('exit', function (code, signal) {
+    process.on('exit', function(){
+      if (signal) {
+        process.kill(process.pid, signal);
+      } else {
+        process.exit(code);
+      }
+    });
+  });
+}
+
+
+
+
+
+
+

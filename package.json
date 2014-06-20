@@ -18,21 +18,17 @@
     "sonea": "./bin/sonea"
   },
   "dependencies": {
-    "coffee-script": "^1.7.1",
-    "debug": "^0.8.1",
-    "mongoose-schema-extend": "^0.1.7",
-    "mongoose": "^3.8.8",
-    "bcrypt": "^0.7.8",
-    "lodash": "^2.4.1",
-    "connect-mongo": "^0.4.0",
-    "express": "^4.1.1",
-    "static-favicon": "^1.0.2",
-    "cookie-parser": "^1.0.1",
-    "morgan": "^1.0.0",
     "body-parser": "^1.0.2",
-    "stylus": "^0.44.0",
+    "coffee-script": "^1.7.1",
+    "colors": "^0.6.2",
+    "commander": "^2.2.0",
+    "cookie-parser": "^1.0.1",
+    "debug": "^0.8.1",
+    "express": "^4.1.1",
     "jade": "^1.3.1",
-    "colors": "^0.6.2"
+    "lodash": "^2.4.1",
+    "morgan": "^1.0.0",
+    "static-favicon": "^1.0.2"
   },
   "devDependencies": {
     "should": "~3.3.1",
@@ -41,10 +37,8 @@
   },
   "scripts": {
     "test": "mocha",
-    "start": "set DEBUG=sonea & node index.js",
-    "example": "set DEBUG=sonea,sonea-basic-example & nodemon -q examples/basicExample/basic.coffee",
-
-    "wintest": "set NODE_ENV=test & mocha",
-    "winexample": "set DEBUG=sonea,sonea-basic-example & nodemon -q examples/basicExample/basic.coffee"
+    "start": "set DEBUG=* & node index.js",
+    "example": "nodemon -q examples/simple/example-sonea-app.coffee",
+    "cli": "set DEBUG=sonea-cli & sonea"
   }
 }
