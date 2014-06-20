@@ -84,7 +84,8 @@ class Sonea
     @app.use @favicon()
     @app.use @logger('dev') # '  sonea :method :url :status :res[Content-Length]b')
     @app.use @bodyParser.json()
-    @app.use @bodyParser.urlencoded()
+    @app.use @bodyParser.urlencoded
+      extended: true
     @app.use @cookieParser()
     @app.use @express.static(@path.join(__dirname, "public"))
 
