@@ -16,6 +16,7 @@
   "bin": {
     "sonea": "./bin/sonea"
   },
+  "preferGlobal": true,
   "dependencies": {
     "body-parser": "^1.0.2",
     "coffee-script": "^1.7.1",
