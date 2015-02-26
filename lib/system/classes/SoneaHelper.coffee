@@ -1,0 +1,1 @@
+# Methods that can be used in views
