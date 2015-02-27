@@ -6,14 +6,29 @@ soneaEventManager = new SoneaSystem.SoneaEventManager
 EVENTNAME = 'test'
 
 describe 'SoneaEventManager', ->
+    event = null
     before ->
         event = soneaEventManager.addEvent EVENTNAME
-        event.on (fn, done) ->
-            fn?(EVENTNAME)
-            done?()
+        event.on (val, fn) ->
+            should.exist val
+            fn?(val)
+    
+    it "should get the #{EVENTNAME} event", ->
+        event.should.be.eql soneaEventManager.getEvent EVENTNAME
+        
+    describe 'SoneaEvent', ->
+        it 'should hold the event manager', ->
+            event.manager.should.be.eql soneaEventManager
             
-    it "should emit #{EVENTNAME} Event", (done) ->
-        event  = soneaEventManager.getEvent EVENTNAME
-        event.emit (val) ->
-            val.should.be.eql EVENTNAME
-        ,done
+        it "should emit the #{EVENTNAME} event", (done) ->
+            event.emit EVENTNAME, ->
+                done()
+                
+        it "should have multiple listner", (done) ->
+            event.on (val) ->
+                val.should.be.eql 'second'
+            
+            event.emit 'second', (val) ->
+                val.should.be.eql 'second'
+                done()
+        
