@@ -8,6 +8,7 @@ x = module.exports = class Routes extends SoneaRoutes
         @scope '/my', =>
             @scope '/your', =>
                 @get '/rofl'
+                @post '/lol'
         
 c = new x()
 console.log c.routes
