@@ -13,3 +13,7 @@ sonea
 
 > currently no coffee coverage [![Test Coverage](https://codeclimate.com/github/Naxmeify/sonea/badges/coverage.svg)](https://codeclimate.com/github/Naxmeify/sonea)
 
+
+## Documentation
+
+Can be found here: [Table of Contents of documentation](https://github.com/Naxmeify/sonea/blob/master/docs/toc.md)
