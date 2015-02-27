@@ -1,3 +1,5 @@
 # Methods that can be used in views
 
-module.exports = class SoneaHelper
+SoneaModule     = require './SoneaModule'
+
+module.exports = class SoneaHelper extends SoneaModule

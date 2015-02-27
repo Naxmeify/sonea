@@ -1,8 +1,6 @@
-# Event Emitter
+SoneaModule     = require './SoneaModule'
 
-event = require 'events'
-
-module.exports = class SoneaEvent
+module.exports = class SoneaEvent extends SoneaModule
 
   constructor: (@eventName, @manager) ->
 

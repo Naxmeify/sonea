@@ -1,1 +1,5 @@
-module.exports = class SoneaController
+SoneaModule     = require './SoneaModule'
+
+module.exports = class SoneaController extends SoneaModule
+    constructor: ->
+        

@@ -1,3 +1,6 @@
 # Socket.io Support
 
-module.exports = class SoneaSocket
+SoneaModule     = require './SoneaModule'
+
+module.exports = class SoneaSocket extends SoneaModule
+    constructor: (@io) ->

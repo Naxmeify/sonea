@@ -1,2 +1,4 @@
 # DB Models
-module.exports = class SoneaModel
+SoneaModule     = require './SoneaModule'
+
+module.exports = class SoneaModel extends SoneaModule
