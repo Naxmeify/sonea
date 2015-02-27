@@ -11,7 +11,7 @@ module.exports = class SoneaEventManager extends SoneaModule
   constructor: (@applicationContext) ->
 
   addEvent: (eventName) ->
-    @events[eventName] = new SoneaEvent eventName, @eventHandler
+    @events[eventName] = new SoneaEvent eventName, @
 
   getEvent: (eventName) ->
     @events[eventName]

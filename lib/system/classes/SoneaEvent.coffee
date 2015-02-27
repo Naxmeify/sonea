@@ -5,8 +5,8 @@ module.exports = class SoneaEvent extends SoneaModule
   constructor: (@eventName, @manager) ->
 
   on: (callback) ->
-    @manager.on @eventName, =>
+    @manager.eventHandler.on @eventName, =>
         callback.apply null, arguments[0]
 
   emit: ->
-    @manager.emit @eventName, arguments
+    @manager.eventHandler.emit @eventName, arguments
