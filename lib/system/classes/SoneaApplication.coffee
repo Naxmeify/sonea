@@ -1,5 +1,16 @@
 # Application Context
-SoneaModule     = require './SoneaModule'
+SoneaModule             = require './SoneaModule'
+SoneaEventManager       = require './SoneaEventManager'
+
 
 module.exports = class SoneaApplication extends SoneaModule
-    constructor: (@application) ->
+    controllers: {}
+    models: {}
+    services: {}
+    helpers: {}
+    plugins: {}
+    
+    eventManager: null
+    
+    constructor: (@application, @config) ->
+        @eventManager = new SoneaEventManager @
