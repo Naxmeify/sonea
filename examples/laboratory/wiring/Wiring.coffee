@@ -1,0 +1,1 @@
+global.ExampleModel = require './ExampleModel'
