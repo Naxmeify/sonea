@@ -11,20 +11,20 @@ Application Conventions
 # Filenames
 
 ## App
-* Controller: <name>_controller.coffee
-* Models: <Name>.coffee
-* Views: <name>.html.eco (or if template: _<name>.html.eco)
-* Services: <name>_service.coffee
-* Helper: <name>_helper.coffee
-* Hooks / Events: <name>_hook.coffee
+* Controller: `<name>_controller.coffee`
+* Models: `<Name>.coffee`
+* Views: `<name>.html.eco` (or if template: `_<name>.html.eco`)
+* Services: `<name>_service.coffee`
+* Helper: `<name>_helper.coffee`
+* Hooks / Events: `<name>_hook.coffee`
 
 ## Assets
 
-* JS: <anything>.js
-* CSS: <anything>.css
-* Coffee: <anything>.js.coffee (for scripts that will be compiled to js)
-* LESS: <anything>.css.less (for styles that will be compiled to css)
-* Stylus: <anything>.css.styl (for styles that will be compiled to css)
+* JS: `<anything>.js`
+* CSS: `<anything>.css`
+* Coffee: `<anything>.js.coffee` (for scripts that will be compiled to js)
+* LESS: `<anything>.css.less` (for styles that will be compiled to css)
+* Stylus: `<anything>.css.styl` (for styles that will be compiled to css)
 
 All other assets will be static with there paths (more in section Folders).
 
@@ -43,7 +43,7 @@ All other assets will be static with there paths (more in section Folders).
 ## In helpers
 
 * Helper Methods will be populated to response.locals for use in views
-* each method can be called through: <helper_namespace/helper_name>.<method_name>
+* each method can be called through: `<helper_namespace/helper_name>.<method_name>`
 
 e.g. (sonea default namespace is "s")
 
