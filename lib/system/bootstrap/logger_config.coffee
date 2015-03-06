@@ -8,4 +8,4 @@ winston.loggers.add 'sonea',
     label: 'sonea'
 
   file:
-    filename: path.join global.SONEA_CONSTANTS.APP_ROOT, 'logs/sonea.log'
+    filename: path.join process.cwd(), 'logs/sonea.log'

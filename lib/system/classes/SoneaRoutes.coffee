@@ -45,6 +45,10 @@ module.exports = class SoneaRoutes extends SoneaModule
         opts.method = 'DELETE'
         @defineRoute target, opts
         
+    match: ->
+    socket: ->
+    mount: ->
+    
     scope: (path, opts={}, cb) ->
         cb = opts if typeof opts is 'function'
         @lastScope = @currentScope

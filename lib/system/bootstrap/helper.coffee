@@ -1,16 +1,17 @@
 fs      = require 'fs'
 path    = require 'path'
 
-Log     = require('winston').loggers.get global.SONEA_CONSTANTS.NAME
+Log     = require('winston').loggers.get global.Sonea.CONSTANTS.NAME
 
 exports.Loader = (targetPath) ->
-  Log.debug 'Loading: '+targetPath
+  console.log 'Loading: '+targetPath
   requiredFiles = {}
-  fs.readdirSync(targetPath).forEach (file) ->
+  files = fs.readdirSync(targetPath)
+  for file in files
     if file.match(/.+\.js/g) isnt null or file isnt 'index.coffee' or file isnt 'index.js'
       name = file.replace '.js', ''
       name = name.replace '.coffee', ''
-      Log.debug 'Require: '+path.join targetPath, file
+      console.log 'Found: '+path.join targetPath, file
       requiredFiles[name] = require path.join targetPath, file
 
   requiredFiles
