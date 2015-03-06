@@ -15,3 +15,24 @@ exports.Loader = (targetPath) ->
       requiredFiles[name] = require path.join targetPath, file
 
   requiredFiles
+
+exports.findAll = (targetPath) ->
+    return walk targetPath
+
+walk = (walkPath) ->
+    foundFiles = []
+    files = fs.readdirSync(walkPath)
+    for file in files
+        filePath = path.join walkPath, file
+        stats = fs.statSync filePath
+        
+        if stats.isDirectory()
+            walk(filePath).forEach (foundFile) ->
+                foundFiles.push foundFile
+        else
+            foundFiles.push
+                file: file
+                filePath: filePath
+                stats: stats
+        
+    return foundFiles

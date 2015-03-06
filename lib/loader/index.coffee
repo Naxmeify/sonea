@@ -1,9 +1,12 @@
 Log     = require('winston').loggers.get global.Sonea.CONSTANTS.NAME
 
+search_controllers = require('./search_controllers')
+
 module.exports = (applicationFolderPath) ->
-    console.log 'running ' + applicationFolderPath
     
     # Find Controllers
+    controllers = search_controllers applicationFolderPath
+    
     # Find Helpers
     # Find Hooks
     # Find Services

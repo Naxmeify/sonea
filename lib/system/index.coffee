@@ -15,10 +15,13 @@ require './bootstrap/logger_config'
 
 # ==== Bootstrap Helper
 console.log 'Bootstrap Helper'
-bootstrapHelper = require './bootstrap/helper'
+helper = require './bootstrap/helper'
+global.Sonea.helper = helper
 
-classes = bootstrapHelper.Loader path.join __dirname, 'classes'
+classes = helper.Loader path.join __dirname, 'classes'
+global.Sonea.classes = classes
 
 exports = module.exports = 
+    helper: helper
     classes: classes
 
