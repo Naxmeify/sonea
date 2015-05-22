@@ -1,4 +1,7 @@
 class ResourceController extends ApplicationController
-    index: ->
+    model: "User"
+    
+    rest: true
+    # crud will be created
+    # index, show, create, edit, update, destroy
         
-console.log ResourceController

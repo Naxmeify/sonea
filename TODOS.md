@@ -82,7 +82,7 @@ Application (Root Folder)
 - - any_other_lib.coffee
 ```
 ```
-- spec
+- test
 - - controllers
 - - - controller_name_spec.coffee
 - - models

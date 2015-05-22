@@ -1,27 +1,11 @@
-# ==== reqs
-path = require 'path'
+# define Sonea
+Sonea = require "./Sonea"
 
-# ==== Bootstrap AutoWire
-console.log 'Bootstrap AutoWire'
-require './bootstrap/wiring'
+SoneaBuilder = -> new Sonea()
 
-# ==== Bootstrap Constants
-console.log 'Bootstrap Constants'
-require './bootstrap/constants'
+# expose the builder
+module.exports = SoneaBuilder
 
-# ==== Bootstrap Default Logger Config
-console.log 'Bootstrap Logger Config'
-require './bootstrap/logger_config'
-
-# ==== Bootstrap Helper
-console.log 'Bootstrap Helper'
-helper = require './bootstrap/helper'
-global.Sonea.helper = helper
-
-classes = helper.Loader path.join __dirname, 'classes'
-global.Sonea.classes = classes
-
-exports = module.exports = 
-    helper: helper
-    classes: classes
-
+# bw comp -> singleton
+single = SoneaBuilder()
+SoneaBuilder.isValidApp = Sonea._.bind single.isValidApp, single

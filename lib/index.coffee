@@ -1,9 +1,8 @@
-console.log 'Load System'
-system = require './system'
+# module
+Sonea = require "./system"
 
-console.log 'Load Application Loader'
-loader = require './loader'
+# instantiating and exposing
+module.exports = new Sonea()
 
-exports.run = (applicationFolderPath) ->
-    console.log 'Loading Application at ' + applicationFolderPath
-    loader applicationFolderPath
+# For testing (or convencience...)
+module.exports.Sonea = Sonea
