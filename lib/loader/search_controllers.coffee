@@ -1,3 +1,5 @@
+'use strict'
+
 path = require 'path'
 
 module.exports = (applicationFolderPath) ->

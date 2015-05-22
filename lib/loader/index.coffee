@@ -1,4 +1,6 @@
-Log     = require('winston').loggers.get global.Sonea.CONSTANTS.NAME
+'use strict'
+
+Log = require('winston').loggers.get global.Sonea.CONSTANTS.NAME
 
 search_controllers = require('./search_controllers')
 
