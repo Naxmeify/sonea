@@ -11,6 +11,10 @@
     "type": "git",
     "url": "git://github.com/naxmeify/sonea.git"
   },
+  "bugs": {
+    "url": "https://github.com/naxmeify/sonea/issues"
+  },
+  "homepage": "https://github.com/naxmeify/sonea",
   "license": "MIT",
   "main": "./index.js",
   "bin": {
@@ -33,9 +37,10 @@
     "winston": "^0.9.0"
   },
   "devDependencies": {
-    "should": "~5.0.1",
-    "mocha": "~2.1.0",
-    "nodemon": "^1.0.17"
+    "mocha": "^2.2.5",
+    "nodemon": "^1.0.17",
+    "should": "^6.0.3",
+    "supertest": "^1.0.1"
   },
   "scripts": {
     "test": "mocha",
