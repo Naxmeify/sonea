@@ -2,8 +2,11 @@ Log = require 'winston'
 Log.cli()
 
 before (done) ->
+  # Custom Output
   Log.info "Use default bootstrapper"
   Log.info "Target: #{process.cwd()}"
+  
+  # Place between log and result
   console.log()
   console.log()
   
