@@ -1,12 +1,16 @@
+path = require 'path'
+
 argv = require './argv'
 Sonea = require '..'
+
+argv.sonea_root = path.resolve __dirname, '..'
 
 Log = require 'winston'
 Log.cli()
 
-done = (code=0) ->
+done = (code=0, signal) ->
   Log.profile 'cli' if argv.profile
-  process.exit code
+  process.exit code, signal
 
 Log.profile 'cli' if argv.profile
 
@@ -47,4 +51,5 @@ switch argv._[0].toLowerCase()
   when 't' then execCmd 'test'
   when 'test' then execCmd 'test'
   
-  else require('./command-not-found') argv, done
+  else 
+    require('./command-not-found') argv, done

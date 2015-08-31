@@ -6,9 +6,16 @@ help = [
   'Run tests for the current sonea app'
   ''
   'options:'
-  '  -h, --help         print help'
-  '  -l, --loglevel     set the loglevel'
-  '  -P, --profile      print duration of cli action'
+  '  -h, --help           print help'
+  '  -l, --loglevel       set the loglevel'
+  '  -P, --profile        print duration of cli action'
+  '  -b, --skip-bootstrap skip default test bootstrapper and use own'
+  ''
+  'extra:'
+  '  You can give your own mocha options via cli.'
+  '  after -- option you can paste any mocha cli option'
+  '  e.g. "sonea test -- --reporter list"'
+  ''
 ]
 
 module.exports = ->
