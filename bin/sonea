@@ -3,7 +3,7 @@
 'use strict';
 
 require('coffee-script/register');
-require(require("path").resolve(__dirname, "..", "lib", "cli", "sonea.cli"));
+require(require("path").resolve(__dirname, "..", "cli"));
 
 
 
