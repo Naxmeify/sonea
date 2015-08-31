@@ -1,13 +1,15 @@
 help = [
-  'Sonea Console Command Line Tool!'
+  'Sonea Start Command Line Tool!'
   ''
-  'usage: sonea console [options]'
+  'usage: sonea start [options]'
   ''
-  'Open an interactive node.js shell within sonea app'
+  'Start the current sonea app'
   ''
   'options:'
   '  -h, --help         print help'
   '  -l, --loglevel     set the loglevel'
+  '  -p, --port         set the port for listen'
+  '  -i, --ip           set the ip/host for listen'
   '  -P, --profile      print duration of cli action'
 ]
 

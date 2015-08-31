@@ -1,9 +1,9 @@
 help = [
-  'Sonea Console Command Line Tool!'
+  'Sonea Routes Command Line Tool!'
   ''
-  'usage: sonea console [options]'
+  'usage: sonea routes [options]'
   ''
-  'Open an interactive node.js shell within sonea app'
+  'Print routes of the current sonea app'
   ''
   'options:'
   '  -h, --help         print help'

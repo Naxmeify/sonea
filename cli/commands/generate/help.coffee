@@ -1,9 +1,9 @@
 help = [
-  'Sonea Console Command Line Tool!'
+  'Sonea Generate Command Line Tool!'
   ''
-  'usage: sonea console [options]'
+  'usage: sonea generate [action] [options]'
   ''
-  'Open an interactive node.js shell within sonea app'
+  'Generate a new component for the current sonea app'
   ''
   'options:'
   '  -h, --help         print help'

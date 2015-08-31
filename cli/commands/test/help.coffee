@@ -1,9 +1,9 @@
 help = [
-  'Sonea Console Command Line Tool!'
+  'Sonea Test Command Line Tool!'
   ''
-  'usage: sonea console [options]'
+  'usage: sonea test [options] [targets]'
   ''
-  'Open an interactive node.js shell within sonea app'
+  'Run tests for the current sonea app'
   ''
   'options:'
   '  -h, --help         print help'
