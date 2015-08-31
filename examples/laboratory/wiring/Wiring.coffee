@@ -1,1 +1,0 @@
-global.ExampleModel = require './ExampleModel'

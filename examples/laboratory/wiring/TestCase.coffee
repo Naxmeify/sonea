@@ -1,3 +1,0 @@
-require './Wiring'
-
-ExampleModel()
