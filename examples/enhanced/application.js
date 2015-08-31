@@ -11,5 +11,5 @@
 'use strict';
 
 /*jslint nomen: true*/
-require('../../').run(__dirname);
+require('../../').start(__dirname);
 /*jslint nomen: false*/
