@@ -1,7 +1,13 @@
-console.log "LOL1"
+Log = require 'winston'
+Log.cli()
+
 before (done) ->
-  console.log "LOL2"
-  require('../../').start __dirname, {}, (err, sonea) ->
+  Log.info "Use default bootstrapper"
+  Log.info "Target: #{process.cwd()}"
+  console.log()
+  console.log()
+  
+  require('../../../').start process.cwd(), {}, (err, sonea) ->
     done err if err
     
     global.sonea = sonea
@@ -9,5 +15,3 @@ before (done) ->
   
 after (done) ->
   sonea.stop done
-  
-it "should", ->

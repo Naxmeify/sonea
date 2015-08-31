@@ -30,14 +30,14 @@ module.exports = (argv, done) ->
   # at least add our bootstrap
   unless argv['skip-bootstrap']
     defaultBootstrap = path.resolve __dirname, 'default.bootstrap.test.coffee'
-    #args.push "--require"
-    #args.push defaultBootstrap
+    args.push defaultBootstrap
   
   # add given targets
   targets = argv._.slice 1
   args.push target for target in targets
+  args.push "test" if targets.length is 0
   
-  console.log args
+  # console.log args
   # console.log argv
   
   proc = spawn process.execPath, args, 
