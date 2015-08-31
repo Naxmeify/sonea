@@ -1,0 +1,11 @@
+{
+  "name": "simple-sonea-app",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "test": "./node_modules/.bin/sonea test"
+  },
+  "dependencies": {
+    "sonea": "file:../.."
+  }
+}
