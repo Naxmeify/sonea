@@ -6,6 +6,6 @@
     "test": "./node_modules/.bin/sonea test"
   },
   "dependencies": {
-    "sonea": "file:../.."
+    "sonea": "*"
   }
 }

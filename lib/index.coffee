@@ -10,5 +10,12 @@ Sonea = require './system/Sonea'
 exports = module.exports = Sonea
 
 exports.start = (target, config={}, callback=(->)) ->
-  # console.log "run #{target}"
-  callback null, new Sonea
+  sonea = new Sonea target
+  sonea.start config, (err) ->
+    callback err, sonea 
+  
+exports.bootstrap = (target, config={}, callback=(->)) ->
+  sonea = new Sonea target
+  sonea.bootstrap config, (err) ->
+    callback err, sonea
+  

@@ -3,8 +3,13 @@ pkg = require '../../package.json'
 class Sonea
   @manifest: pkg
   
-  start: ->
-  stop: (callback=(->))->
+  bootstrap: (config={},callback=(->)) ->
+    callback()
+  
+  start: (config={},callback=(->)) ->
+    callback()
+    
+  stop: (callback=(->)) ->
     callback()
     
   constructor: (@target, @config) ->

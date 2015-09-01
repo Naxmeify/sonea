@@ -9,7 +9,6 @@ services:
 install:
 - npm install
 - npm link
-- (cd examples/simple && npm link)
   
 script:
 - npm test
