@@ -10,6 +10,30 @@ sonea
 [![Test Coverage](https://codeclimate.com/github/nivil/sonea/badges/coverage.svg)](https://codeclimate.com/github/nivil/sonea)
 
 
-## Documentation
+## Installation
 
-Can be found here: [Table of Contents of documentation](https://github.com/nivil/sonea/blob/master/docs/toc.md)
+```
+$ npm install -g sonea
+```
+
+## Usage
+
+```
+$ sonea new sample_app
+$ cd sample_app/
+$ sonea server
+```
+
+## Information
+
+* [Documentation](https://github.com/nivil/sonea/wiki)
+
+
+## Contribution
+
+Issue, Fork, Pull Request
+
+
+## License
+
+MIT
