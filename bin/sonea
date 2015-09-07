@@ -1,9 +1,6 @@
 #!/usr/bin/env node
 
-'use strict';
-
-require('coffee-script/register');
-require(require("path").resolve(__dirname, "..", "cli"));
+require("../lib/cli")(process, process.exit);
 
 
 
