@@ -9,12 +9,12 @@
   "author": "MRW Neundorf <matt@nax.me>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/naxmeify/sonea.git"
+    "url": "git://github.com/nivil/sonea.git"
   },
   "bugs": {
-    "url": "https://github.com/naxmeify/sonea/issues"
+    "url": "https://github.com/nivil/sonea/issues"
   },
-  "homepage": "https://github.com/naxmeify/sonea",
+  "homepage": "https://github.com/nivil/sonea",
   "license": "MIT",
   "main": "./index.js",
   "bin": {
