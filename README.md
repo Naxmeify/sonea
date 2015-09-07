@@ -9,6 +9,9 @@ sonea
 [![Code Climate](https://codeclimate.com/github/nivil/sonea.png)](https://codeclimate.com/github/nivil/sonea)
 [![Test Coverage](https://codeclimate.com/github/nivil/sonea/badges/coverage.svg)](https://codeclimate.com/github/nivil/sonea)
 
+## About
+
+web framework to build web applications...
 
 ## Installation
 
