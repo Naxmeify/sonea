@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/nivil/sonea",
   "license": "MIT",
-  "main": "./index.js",
+  "main": "./lib/index.js",
   "bin": {
     "sonea": "./bin/sonea"
   },
