@@ -1,2 +1,2 @@
-module.exports = class
+module.exports = ->
     @root 'HomeController#index'
