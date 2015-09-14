@@ -1,0 +1,5 @@
+*.coffee linguist-language=JavaScript
+
+example/* linguist-vendored
+
+lib/cli/commands/* linguist-documentation
