@@ -3,7 +3,7 @@ module.exports = {
     apps: [
         'sonea-admin', // no need a path -> will be required
         {
-            app: './sonea-example-app', // relative from root
+            app: './sonea-example-app', // relative from root or absolute
             as: 'ExampleApp' // default is capitalized camelcase name from manifest (package.json)
         }
     ],
