@@ -9,7 +9,7 @@ module.exports = {
     ],
     
     // extensions - like security
-    extension: [
+    extensions: [
         //'cors',
         //'csrf'
     ],
@@ -31,7 +31,7 @@ module.exports = {
         '$custom',
         
         // custom app specific middlewares
-        '$apps',
+        '$app',
         
         // sonea favicon loader - favicon can be overwritten per app
         'favicon',

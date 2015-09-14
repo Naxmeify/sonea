@@ -11,10 +11,12 @@
     "email": "blank.nivil@gmail.com",
     "url": "https://nivil.github.io"
   },
-  "contributors": [{
-    "name": "MRW Neundorf",
-    "email": "matt@nax.me"
-  }],
+  "contributors": [
+    {
+      "name": "MRW Neundorf",
+      "email": "matt@nax.me"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/nivil/sonea.git"
@@ -42,6 +44,7 @@
     "method-override": "^2.3.5",
     "minimist": "^1.2.0",
     "morgan": "^1.0.0",
+    "serve-favicon": "^2.3.0",
     "winston": "^1.0.1"
   },
   "devDependencies": {
