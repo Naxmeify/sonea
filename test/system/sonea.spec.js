@@ -6,6 +6,6 @@ describe("Sonea", function() {
    });
 
     it("should load", function() {
-       Sonea();
+       new Sonea();
     });
 });

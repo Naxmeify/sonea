@@ -6,7 +6,15 @@
     "sonea",
     "web framework"
   ],
-  "author": "MRW Neundorf",
+  "author": {
+    "name": "[ ]",
+    "email": "blank.nivil@gmail.com",
+    "url": "https://nivil.github.io"
+  },
+  "contributors": [{
+    "name": "MRW Neundorf",
+    "email": "matt@nax.me"
+  }],
   "repository": {
     "type": "git",
     "url": "git://github.com/nivil/sonea.git"
@@ -49,6 +57,8 @@
     "test": "./node_modules/.bin/mocha test/spec_helper.js test/",
     "testAndCover": "./node_modules/.bin/istanbul cover -x '**/vendor/**' ./node_modules/.bin/_mocha -- test/spec_helper.js test/",
     "codeclimate": "./node_modules/.bin/codeclimate-test-reporter < coverage/lcov.info",
-    "example": "cd example/ && sonea server"
+    "example": "cd example/ && sonea server",
+    "example_app": "cd example/example_app/ && sonea server",
+    "example_app_standalone": "cd example/example_app/ && node standalone.js"
   }
 }
