@@ -1,0 +1,13 @@
+{
+    "name": "somea-example-app",
+    "version": "0.0.0",
+    "description": "a sonea application",
+    "scripts": {
+        "install": "./node_modules/.bin/sonea install",
+        "start": "./node_modules/.bin/sonea start",
+        "test": "./node_modules/.bin/sonea test"
+    },
+    "dependencies": {
+        "sonea": "*"
+    }
+}
