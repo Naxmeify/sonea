@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "codeclimate-test-reporter": "^0.1.0",
+    "concat-stream": "^1.5.0",
     "istanbul": "^0.3.19",
     "mocha": "^2.2.5",
     "should": "^7.1.0",
@@ -45,8 +46,8 @@
     "test-cli": "^0.1.0"
   },
   "scripts": {
-    "test": "mocha",
-    "testAndCover": "./node_modules/.bin/istanbul cover -x '**/vendor/**' ./node_modules/.bin/_mocha -- test",
+    "test": "./node_modules/.bin/mocha test/spec_helper.js test/",
+    "testAndCover": "./node_modules/.bin/istanbul cover -x '**/vendor/**' ./node_modules/.bin/_mocha -- test/spec_helper.js test/",
     "codeclimate": "./node_modules/.bin/codeclimate-test-reporter < coverage/lcov.info",
     "example": "cd example/ && sonea start"
   }
