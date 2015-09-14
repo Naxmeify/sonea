@@ -24,7 +24,7 @@ $ npm install -g sonea
 ```
 $ sonea new sample_app
 $ cd sample_app/
-$ sonea server
+$ sonea start
 ```
 
 ## Information
