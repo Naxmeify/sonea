@@ -1,5 +1,5 @@
 {
-    "name": "somea-example",
+    "name": "sonea-example",
     "version": "0.0.0",
     "description": "a sonea project",
     "scripts": {
@@ -8,7 +8,6 @@
         "test": "./node_modules/.bin/sonea test"
     },
     "dependencies": {
-        "sonea": "*",
-        "sonea-admin": "*"
+        "sonea": "*"
     }
 }
