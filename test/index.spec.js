@@ -1,4 +1,5 @@
-var Sonea = require('..');
+var Sonea = global.Sonea;
+
 describe("Sonea Index", function() {
     it("should have a property manifest", function() {
         Sonea.should.have.a.property('manifest');

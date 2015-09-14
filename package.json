@@ -49,6 +49,6 @@
     "test": "./node_modules/.bin/mocha test/spec_helper.js test/",
     "testAndCover": "./node_modules/.bin/istanbul cover -x '**/vendor/**' ./node_modules/.bin/_mocha -- test/spec_helper.js test/",
     "codeclimate": "./node_modules/.bin/codeclimate-test-reporter < coverage/lcov.info",
-    "example": "cd example/ && sonea start"
+    "example": "cd example/ && sonea server"
   }
 }
