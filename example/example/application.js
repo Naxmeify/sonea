@@ -1,14 +1,17 @@
 module.exports = {
     
     apps: [
-        'sonea-admin',
-        {app: 'sonea-example-app', as: 'ExampleApp'}
+        'sonea-admin', // no need a path -> will be required
+        {
+            app: './sonea-example-app', // relative from root
+            as: 'ExampleApp' // default is capitalized camelcase name from manifest (package.json)
+        }
     ],
     
     // extensions - like security
     extension: [
-        'cors',
-        'csrf'
+        //'cors',
+        //'csrf'
     ],
     
     // global middlewares - for all applications
