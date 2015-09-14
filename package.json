@@ -38,6 +38,7 @@
     "colors": "^1.0.3",
     "cookie-parser": "^1.0.1",
     "ect": "^0.5.9",
+    "ejs": "^2.3.4",
     "express": "^4.1.1",
     "express-session": "^1.11.3",
     "lodash": "^3.10.1",
