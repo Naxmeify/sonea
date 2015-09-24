@@ -37,7 +37,7 @@ $ sonea server
 
 ### Hint
 
-You don't have to create a project. You can only create a standalone.
+You don't have to create a project. You can create a standalone sonea app.
 ```
 $ sonea new myStandaloneApp --standalone
 $ cd myStandaloneApp/
