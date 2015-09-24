@@ -9,6 +9,9 @@ var SoneaCLIPath = global.SoneaCLIPath = path.resolve(Sonea.rootDir, "lib", "cli
 var SoneaCLIExecutable = global.Sonea = path.resolve(Sonea.rootDir, "bin", "sonea");
 var SoneaCLI = global.SoneaCLI = require(SoneaCLIPath);
 
+/**
+ * For testing the output of an cli call
+ */
 global.SoneaCLIExecute = function(args, done) {
     var proc = spawn(SoneaCLIExecutable, args);
     proc.stdout.pipe(concatStream(function(output) {
@@ -16,10 +19,16 @@ global.SoneaCLIExecute = function(args, done) {
     }));
 };
 
+/**
+ * For testing the result of an cli call
+ */
 global.SoneaCLICall = function(argv, done) {
     function Process(argv, done) {
         var self = this;
         this.argv = argv;
+        this.cwd = function() {
+            return __dirname;
+        };
         this.done = done;
         events.EventEmitter.call(this);
 
