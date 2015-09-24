@@ -5,4 +5,4 @@ exclude_paths:
 - "LICENSE"
 - "README.md"
 - ".travis.yml"
-- "example"
+- "example/*"
