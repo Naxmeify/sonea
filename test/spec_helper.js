@@ -1,4 +1,6 @@
 var spawn = require("child_process").spawn;
+var events = require("events");
+var util = require("util");
 var path = require("path");
 var concatStream = require("concat-stream");
 
@@ -14,10 +16,28 @@ global.SoneaCLIExecute = function(args, done) {
     }));
 };
 
+global.SoneaCLICall = function(argv, done) {
+    function Process(argv, done) {
+        var self = this;
+        this.argv = argv;
+        this.done = done;
+        events.EventEmitter.call(this);
+
+        this.exit = function(code) {
+            self.emit('exit', code);
+            self.done(code);
+        };
+    }
+    util.inherits(Process, events.EventEmitter);
+
+    var process = new Process(argv, done);
+    SoneaCLI(process, process.exit);
+};
+
 before(function() {
-    
+
 });
 
 after(function() {
-    
+
 });

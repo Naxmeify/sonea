@@ -1,6 +1,6 @@
 describe("SoneaCLI", function() {
 
-    tests = [{
+    var tests = [{
         args: ['notexistingcommand'],
         expected: 'Command notexistingcommand not found'
     }, {

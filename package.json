@@ -58,8 +58,8 @@
     "test-cli": "^0.1.0"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha test/spec_helper.js test/",
-    "testAndCover": "./node_modules/.bin/istanbul cover -x '**/vendor/**' ./node_modules/.bin/_mocha -- test/spec_helper.js test/",
+    "test": "NODE_ENV=test ./node_modules/.bin/mocha test/spec_helper.js test/",
+    "testAndCover": "NODE_ENV=test ./node_modules/.bin/istanbul cover -x '**/vendor/**' ./node_modules/.bin/_mocha -- test/spec_helper.js test/",
     "codeclimate": "./node_modules/.bin/codeclimate-test-reporter < coverage/lcov.info",
     "example": "cd example/ && sonea server",
     "example_app": "cd example/example_app/ && sonea server",
