@@ -7,8 +7,16 @@ describe("SoneaCLI Dummy CLI Call", function() {
             done();
         });
     });
+    
     it("should respond exit code 0 (for invalid command in argv)", function(done) {
         SoneaCLICall(['', '', 'notExistingCommand'], function(code) {
+           code.should.be.eql(0);
+           done();
+       });
+    });
+    
+    it("should respond exit code 0 (for invalid command with correction in argv)", function(done) {
+        SoneaCLICall(['', '', 'erver'], function(code) {
            code.should.be.eql(0);
            done();
        });
