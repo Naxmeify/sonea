@@ -1,6 +1,6 @@
 var SoneaCLICall = global.SoneaCLICall;
 
-describe.only("SoneaCLI Command server", function() {
+describe("SoneaCLI Command server", function() {
     it("should respond exit code 1 for no sonea application", function(done) {
         SoneaCLICall(['', '', 'server'], function(code) {
             code.should.be.eql(1);
