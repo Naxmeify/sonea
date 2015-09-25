@@ -1,6 +1,6 @@
 describe("SoneaCLI", function() {
 
-    tests = [{
+    var tests = [{
         args: ['--help'],
         expected: global.SoneaCLI.help.helpText
     }, {
