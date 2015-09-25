@@ -1,4 +1,13 @@
+var SoneaCLICall = global.SoneaCLICall;
+
 describe("SoneaCLI Command generate", function() {
+    it("should respond exit code 0", function(done) {
+        SoneaCLICall(['', '', 'generate'], function(code) {
+            code.should.be.eql(0);
+            done();
+        });
+    });
+    
     context("model", function() {
         it("should create a model for given name with given attributes");
     });
