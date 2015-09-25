@@ -1,6 +1,6 @@
 describe("SoneaCLI", function() {
 
-    tests = [{
+    var tests = [{
         args: ['--version'],
         expected: global.Sonea.manifest.version
     }];
@@ -8,10 +8,8 @@ describe("SoneaCLI", function() {
     tests.forEach(function(test) {
         it("should reponse the expected output for '" + test.args + "' arguments", function(done) {
             global.SoneaCLIExecute(test.args, function(output) {
-                for (var i in test.expected) {
-                    var expected = test.expected[i];
-                    output.should.containEql(expected);
-                }
+                    output.should.containEql(test.expected);
+                
                 done();
             });
         });
