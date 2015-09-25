@@ -1,6 +1,7 @@
 var spawn = require("child_process").spawn;
 var events = require("events");
 var util = require("util");
+var fs = require("fs");
 var path = require("path");
 var concatStream = require("concat-stream");
 
@@ -8,6 +9,8 @@ var Sonea = global.Sonea = require(path.resolve(__dirname, ".."));
 var SoneaCLIPath = global.SoneaCLIPath = path.resolve(Sonea.rootDir, "lib", "cli");
 var SoneaCLIExecutable = global.Sonea = path.resolve(Sonea.rootDir, "bin", "sonea");
 var SoneaCLI = global.SoneaCLI = require(SoneaCLIPath);
+
+var tmpFolder = global.tmpFolder = path.resolve(__dirname, ".tmp");
 
 /**
  * For testing the output of an cli call
@@ -44,9 +47,11 @@ global.SoneaCLICall = function(argv, done) {
 };
 
 before(function() {
-
+    // mkdir tmpFolder
+    fs.mkdirSync(tmpFolder);
 });
 
 after(function() {
-
+    // rmdir tmpFolder
+    fs.rmdirSync(tmpFolder);
 });
