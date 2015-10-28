@@ -1,30 +1,34 @@
 {
   "name": "sonea",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "web framework",
   "keywords": [
     "sonea",
     "web framework"
   ],
   "author": {
-    "name": "[ ]",
-    "email": "blank.nivil@gmail.com",
-    "url": "https://nivil.github.io"
+    "name": "Ninevillage",
+    "email": "info@ninevillage.com",
+    "url": "https://www.ninevillage.com"
   },
   "contributors": [
     {
       "name": "MRW Neundorf",
       "email": "matt@nax.me"
+    },
+    {
+      "name": "[ ]",
+      "email": "blank.nivil@gmail.com"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/nivil/sonea.git"
+    "url": "git://github.com/Ninevillage/sonea.git"
   },
   "bugs": {
-    "url": "https://github.com/nivil/sonea/issues"
+    "url": "https://github.com/Ninevillage/sonea/issues"
   },
-  "homepage": "https://github.com/nivil/sonea",
+  "homepage": "https://github.com/Ninevillage/sonea",
   "license": "MIT",
   "main": "./lib/index.js",
   "bin": {

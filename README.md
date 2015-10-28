@@ -3,11 +3,11 @@ sonea
 
 [![NPM version](https://badge.fury.io/js/sonea.svg)](http://badge.fury.io/js/sonea)
 
-[![Build Status](https://travis-ci.org/nivil/sonea.svg?branch=master)](https://travis-ci.org/nivil/sonea)
-[![Dependency Status](https://gemnasium.com/nivil/sonea.svg)](https://gemnasium.com/nivil/sonea)
+[![Build Status](https://travis-ci.org/Ninevillage/sonea.svg?branch=master)](https://travis-ci.org/Ninevillage/sonea)
+[![Dependency Status](https://gemnasium.com/Ninevillage/sonea.svg)](https://gemnasium.com/Ninevillage/sonea)
 
-[![Code Climate](https://codeclimate.com/github/nivil/sonea.png)](https://codeclimate.com/github/nivil/sonea)
-[![Test Coverage](https://codeclimate.com/github/nivil/sonea/badges/coverage.svg)](https://codeclimate.com/github/nivil/sonea)
+[![Code Climate](https://codeclimate.com/github/Ninevillage/sonea.png)](https://codeclimate.com/github/Ninevillage/sonea)
+[![Test Coverage](https://codeclimate.com/github/Ninevillage/sonea/badges/coverage.svg)](https://codeclimate.com/github/Ninevillage/sonea)
 
 ## About
 
@@ -55,7 +55,7 @@ a sonea app independent from the current directory.
 
 ## Information
 
-* [Documentation](https://github.com/nivil/sonea/wiki)
+* [Documentation](https://github.com/Ninevillage/sonea/wiki)
 
 
 ## Contribution
