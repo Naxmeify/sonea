@@ -1,0 +1,37 @@
+{
+  "name": "sonea",
+  "version": "0.1.0",
+  "description": "web framework",
+  "preferGlobal": true,
+  "main": "./lib/index.js",
+  "bin": {
+    "sonea": "./bin/sonea"
+  },
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/naxmefy/sonea.git"
+  },
+  "keywords": [
+    "sonea",
+    "web framework"
+  ],
+  "author": {
+    "name": "MRW Neundorf [naxmefy]",
+    "email": "m.neundorf@live.de",
+    "url": "http://www.nax.me"
+  },
+  "bugs": {
+    "url": "https://github.com/naxmefy/sonea/issues"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/naxmefy/sonea",
+  "engines": {
+    "node": ">=0.12"
+  },
+  "devDependencies": {
+  },
+  "dependencies": {}
+}

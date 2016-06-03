@@ -1,0 +1,22 @@
+language: node_js
+
+node_js:
+- "0.12"
+- "4"
+- "5"
+- "6"
+
+before_script:
+- npm i -g codacy-coverage
+- npm i -g istanbul
+- npm i -g mocha
+
+script:
+- mocha --require coffee-coverage/register-istanbul
+
+after_script:
+- istanbul report
+- cat ./coverage/lcov.info | codacy-coverage
+
+env:
+- NODE_ENV=test"
