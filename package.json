@@ -32,6 +32,8 @@
     "node": ">=0.12"
   },
   "devDependencies": {
+    "mocha": "2.5.3",
+    "should": "9.0.0"
   },
   "dependencies": {}
 }
