@@ -10,6 +10,7 @@ before_script:
 - npm i -g codacy-coverage
 - npm i -g istanbul
 - npm i -g mocha
+- npm i coffee-coverage
 
 script:
 - mocha --require coffee-coverage/register-istanbul
