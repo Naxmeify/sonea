@@ -10,34 +10,13 @@ sonea
 sonea is (or will be) an application web framework? Not really a framework...
 currently. But maybe it will become on xD
 
-## requirements
+More information can be found at [https://naxmefy.github.io/sonea/](https://naxmefy.github.io/sonea/)
 
-* NodeJS ``` >= 0.12 ```
+## Contributing
 
-## installation
-
-```
-$ npm install --global sonea
-```
-
-## usage
-
-```
-// generate a new project
-$ sonea new my-project
-
-// switch into new project
-$ cd my-project
-
-// start new project
-$ sonea server
-```
-
-and open the browser (default: [http://localhost:3000](http://localhost:3000))
-
-## documentation
-
-The documentation can be found inside the [wiki](https://github.com/naxmefy/sonea/wiki).
+* watch / create issues
+* watch projects
+* fork and create pull requests
 
 ## license
 
