@@ -1,21 +1,12 @@
 language: node_js
-
 node_js:
 - 6
 - 7
-
 before_script:
 - npm i -g codacy-coverage
-- npm i -g istanbul
-- npm i -g mocha
-- npm i coffee-coverage
-
 script:
-- mocha --require coffee-coverage/register-istanbul
-
+- npm run test:coverage
 after_script:
-- istanbul report
 - cat ./coverage/lcov.info | codacy-coverage
-
 env:
-- NODE_ENV=test"
+- NODE_ENV=test
